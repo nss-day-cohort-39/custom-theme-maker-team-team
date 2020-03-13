@@ -1,15 +1,38 @@
 import { useFavorites } from "./FavoritesProvider.js"
 import { FavoriteItem } from "./FavoriteItem.js"
 
+
+const contentTarget = document.querySelector(".favorites")
+
+/*
+    COMPONENT FUNCTION
+*/
 export const FavoritesList = () => {
-    const favoriteItems = useFavorites()
-    return render(favoriteItems)
+    const allFavorites = useFavorites()
+    render(allFavorites)
 }
 
-const render = favoriteCollection => {
-    return `
-        <article class="container__panel favorites">
-            ${favoriteCollection.map(favorite => FavoriteItem(favorite)).join("")}
-        </article>
-    `
+/*
+    RENDERING FUNCTION
+*/
+const render = favoritesArray => {
+    const convertedFavorites = favoritesArray.map(favoritesObject => {
+        const favoriteHTML = FavoriteItem(favoritesObject)
+        return favoriteHTML
+    })
+    const combinedSections = convertedFavorites.join("")
+    eventHub.innerHTML = combinedSections
 }
+
+/*
+    Color the messages when one of the buttons in the ThemeButtons
+    component is clicked.
+*/
+const eventHub = document.querySelector("#container")
+
+eventHub.addEventListener("colorChosen", event => {
+    const color = event.detail.color
+
+    contentTarget.classList = []
+    contentTarget.classList.add(color)
+})
