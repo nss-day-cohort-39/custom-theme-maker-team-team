@@ -1,3 +1,20 @@
+const eventHub = document.querySelector("#container")
+
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.name === "pixelsize") {
+
+        const pixelChosen = clickEvent.target.value
+   
+        const pixelChosenEvent = new CustomEvent("pixelSizeChosen", {
+            detail: {
+                pixelSize: pixelChosen
+            }
+        })
+        eventHub.dispatchEvent(pixelChosenEvent)
+    }
+})
+
+
 export const BorderButtons = () => {
     return `
         <article class="borderSizes">

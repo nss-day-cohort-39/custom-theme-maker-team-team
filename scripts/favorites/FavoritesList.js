@@ -27,3 +27,11 @@ eventHub.addEventListener("sizeChoice", event => {
     contentTarget.classList = "container__panel favorites"
     contentTarget.classList.add(font)
 })
+
+eventHub.addEventListener("pixelSizeChosen", event => {
+    const score = event.detail.pixelSize
+    
+    const contentTarget = document.querySelector('.favorites')
+    contentTarget.classList = []
+    contentTarget.classList.add(score, "container__panel", "favorites")
+})
