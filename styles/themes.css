@@ -1,31 +1,41 @@
 .blue {
-    background-color: lightskyblue;
+  background-color: lightskyblue;
 }
 
 .green {
-    background-color: darkseagreen;
+  background-color: darkseagreen;
 }
 
 .purple {
-    background-color: mediumorchid;
+  background-color: mediumorchid;
 }
 
 .red {
-    background-color: darksalmon;
+  background-color: darksalmon;
 }
 
 .xsmall {
-    font-size: x-small;
+  font-size: x-small;
 }
 
 .small {
-    font-size: small;
+  font-size: small;
 }
 
 .large {
-    font-size: large;
+  font-size: large;
 }
 
 .xlarge {
-    font-size: x-large;
+  font-size: x-large;
+}
+
+.onepixel {
+  border: black solid 1px;
+}
+.threepixels {
+  border: black solid 3px;
+}
+.fivepixels {
+  border: black solid 5px;
 }
