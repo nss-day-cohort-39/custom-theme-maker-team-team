@@ -13,3 +13,4 @@ const render = favoriteCollection => {
         </article>
     `
 }
+
