@@ -9,5 +9,6 @@ export const Dashboard = () => {
         ${ScoreList()}
         ${NewsList()}
         ${FavoritesList()}
+        
     `
 }
