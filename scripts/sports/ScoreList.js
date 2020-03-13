@@ -1,10 +1,14 @@
 import { useScores } from "./ScoreProvider.js"
 import { Score } from "./Score.js"
 
+
+const contentTarget = document.querySelector(".sports")
+
 export const ScoreList = () => {
     const scores = useScores()
     return render(scores)
 }
+
 
 const render = scoreCollection => {
     return `
