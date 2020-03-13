@@ -1,4 +1,4 @@
-let scores = [
+const scores = [
     {
         id: 1,
         team: "Walla Walla Warriors",

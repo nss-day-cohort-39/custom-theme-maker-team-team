@@ -9,6 +9,7 @@ export const ScoreList = () => {
     return render(scores)
 }
 
+
 const render = scoreCollection => {
     return `
         <article class="container__panel scores">

@@ -1,6 +1,8 @@
 import { useNews } from "./NewsProvider.js"
 import { NewsItem } from "./NewsItem.js"
 
+const eventHub = document.querySelector("#container")
+
 export const NewsList = () => {
     const newsItems = useNews()
     return render(newsItems)
@@ -14,13 +16,11 @@ const render = newsCollection => {
     `
 }
 
-const eventHub = document.querySelector("#container")
+eventHub.addEventListener("sizeChoice", event => {
+    const font = event.detail.font
 
- 
-
-eventHub.addEventListener("colorChosen", event => {
-    const color = event.detail.color
     const contentTarget = document.querySelector(".news")
-    contentTarget.classList.add(color)
-     
+
+    contentTarget.classList = "container__panel news"
+    contentTarget.classList.add(font)
 })

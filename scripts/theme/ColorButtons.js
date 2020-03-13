@@ -1,9 +1,9 @@
 
 const eventHub = document.querySelector('#container')
 
-eventHub.addEventListener('click', event=> {
+eventHub.addEventListener('click', event => {
     const colorSelected = event.target.id
-    if(colorSelected.startsWith('btnTheme--')){
+    if (colorSelected.startsWith('btnTheme--')) {
 
         const [prefix, chosenColor] = colorSelected.split("--")
 
@@ -34,4 +34,4 @@ export const ColorButtons = () => {
                 </fieldset>
         </article>
         `
-    }
+}
