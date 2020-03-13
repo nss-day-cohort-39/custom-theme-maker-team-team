@@ -1,23 +1,5 @@
+
 const eventHub = document.querySelector("#container")
-
-eventHub.addEventListener("click", clickEvent => {
-    debugger
-
-    if (clickEvent.target.id.startsWith("btnFont--")) {
-        debugger
-
-        const [prefix, chosenSize] = clickEvent.target.id.split("--")
-        const fontChosenEvent = new CustomEvent("fontChosen", {
-            detail: {
-                fontSize: chosenSize
-            }
-        })
-
-        eventHub.dispatchEvent(fontChosenEvent)
-    }
-})
-
-
 
 export const FontButtons = () => {
     return `
@@ -33,3 +15,19 @@ export const FontButtons = () => {
         </article>
     `
 }
+
+eventHub.addEventListener("click", event => {
+    const clickedButton = event.target.id
+
+    if (event.target.id.startsWith('btnFont--')) {
+        const [prefix, fontSizeChosen] = clickedButton.split("--")
+
+        const selectingFontSize = new CustomEvent("sizeChoice", {
+            detail: {
+                font: fontSizeChosen
+            }
+        })
+
+        eventHub.dispatchEvent(selectingFontSize)
+    }
+})

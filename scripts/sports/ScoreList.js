@@ -1,8 +1,8 @@
 import { useScores } from "./ScoreProvider.js"
 import { Score } from "./Score.js"
 
+const eventHub = document.querySelector("#container")
 
-const contentTarget = document.querySelector(".sports")
 
 export const ScoreList = () => {
     const scores = useScores()
@@ -17,3 +17,12 @@ const render = scoreCollection => {
         </article>
     `
 }
+
+eventHub.addEventListener("sizeChoice", event => {
+    const font = event.detail.font
+
+    const contentTarget = document.querySelector(".scores")
+
+    contentTarget.classList = "container__panel scores"
+    contentTarget.classList.add(font)
+})
