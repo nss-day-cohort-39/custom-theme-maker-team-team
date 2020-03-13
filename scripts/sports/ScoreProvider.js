@@ -60,9 +60,9 @@ export const useScores = () => scores.slice()
 
 export const useFilteredScores = () => {
     const scoresArray = scores.slice()
-    scoresArray.sort((a, b) => {
+    scoresArray.sort((highNum, lowNum) => {
         
-        return b.points - a.points}
+        return lowNum.points - highNum.points}
         )
 
     return scoresArray
