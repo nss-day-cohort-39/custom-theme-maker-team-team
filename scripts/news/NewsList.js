@@ -18,9 +18,11 @@ const eventHub = document.querySelector("#container")
 
  
 
-eventHub.addEventListener("colorChosen", event => {
-    const color = event.detail.color
+eventHub.addEventListener("sizeChoice", event => {
+    const font = event.detail.font
+
     const contentTarget = document.querySelector(".news")
-    contentTarget.classList.add(color)
-     
-})
+
+    contentTarget.classList = "container__panel news"
+    contentTarget.classList.add(font)
+}) 
