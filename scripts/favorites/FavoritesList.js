@@ -29,9 +29,11 @@ eventHub.addEventListener("sizeChoice", event => {
 })
 
 eventHub.addEventListener("pixelSizeChosen", event => {
-    const score = event.detail.pixelSize
+    const favorite = event.detail.pixelSize
     
     const contentTarget = document.querySelector('.favorites')
+    
     contentTarget.classList = []
-    contentTarget.classList.add(score, "container__panel", "favorites")
+
+    contentTarget.classList.add(favorite, "container__panel", "favorites")
 })
