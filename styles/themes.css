@@ -14,14 +14,18 @@
     background-color: darksalmon;
 }
 
-.score {
-    border: 1px solid black
+.xsmall {
+    font-size: x-small;
 }
 
-.score {
-    border: 3px solid black
+.small {
+    font-size: small;
 }
 
-.score {
-    border: 5px solid black
+.large {
+    font-size: large;
+}
+
+.xlarge {
+    font-size: x-large;
 }
