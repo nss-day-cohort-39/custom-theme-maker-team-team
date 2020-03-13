@@ -1,42 +1,37 @@
 
-const eventHub = document.querySelector("#container")
-const contentTarget = document.querySelector(".favorites")
+const eventHub = document.querySelector('#container')
 
-// Listen for browser generated click event in this component
-contentTarget.addEventListener("click", clickEvent => {
+eventHub.addEventListener('click', event=> {
+    const colorSelected = event.target.id
+    if(colorSelected.startsWith('btnTheme--')){
 
-    // Make sure it was one of the color buttons
-    if (clickEvent.target.id.startsWith("btnTheme--")) {
+        const [prefix, chosenColor] = colorSelected.split("--")
 
-        // Get the chosen color
-        const [prefix, chosenColor] = clickEvent.target.id.split("--")
+        const theChosenColor = new CustomEvent("backgroundColorChange", {
 
-        /*
-            Create a new custom event, with a good name, and
-            add a property to the `detail` object that specifies
-            which color was chosen
-        */
-        const colorChosenEvent = new CustomEvent("colorChosen", {
             detail: {
-                color: chosenColor
+                colorChange: chosenColor
             }
         })
-
-        eventHub.dispatchEvent(colorChosenEvent)
+        eventHub.dispatchEvent(theChosenColor)
     }
 })
+
+
+
+
 
 export const ColorButtons = () => {
     return `
         <article class="colors">
-            <fieldset>
-                <legend>Background Colors</legend>
-
+        <fieldset>
+        <legend>Background Colors</legend>
+        
                 <button id="btnTheme--red">Red</button>
                 <button id="btnTheme--purple">Purple</button>
                 <button id="btnTheme--blue">Blue</button>
                 <button id="btnTheme--green">Green</button>
-            </fieldset>
+                </fieldset>
         </article>
-    `
-}
+        `
+    }
