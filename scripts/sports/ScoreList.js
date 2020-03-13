@@ -1,8 +1,14 @@
-import { useScores } from "./ScoreProvider.js"
+import { useScores, useFilteredScores} from "./ScoreProvider.js"
 import { Score } from "./Score.js"
 
 const eventHub = document.querySelector("#container")
 
+
+
+export const FilteredScoreList = () => {
+    const filteredScores = useFilteredScores()
+    return render(filteredScores)
+}
 
 export const ScoreList = () => {
     const scores = useScores()

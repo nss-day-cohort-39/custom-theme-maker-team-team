@@ -56,3 +56,14 @@ const scores = [
 ]
 
 export const useScores = () => scores.slice()
+
+
+export const useFilteredScores = () => {
+    const scoresArray = scores.slice()
+    scoresArray.sort((a, b) => {
+        
+        return b.points - a.points}
+        )
+
+    return scoresArray
+}
