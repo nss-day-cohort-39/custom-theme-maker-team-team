@@ -16,7 +16,6 @@ const render = newsCollection => {
 
 const eventHub = document.querySelector("#container")
 
- 
 
 eventHub.addEventListener("sizeChoice", event => {
     const font = event.detail.font
@@ -25,4 +24,4 @@ eventHub.addEventListener("sizeChoice", event => {
 
     contentTarget.classList = "container__panel news"
     contentTarget.classList.add(font)
-}) 
+})
